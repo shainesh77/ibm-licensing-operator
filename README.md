@@ -186,7 +186,7 @@ spec:
   displayName: IBMCS Operators
   endpoint: https://quay.io/cnr
   publisher: IBM
-  registryNamespace: opencloudio
+  registryNamespace: adamdyszy
   type: appregistry
 EOF
 ```
