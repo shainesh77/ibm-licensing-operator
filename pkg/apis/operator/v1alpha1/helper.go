@@ -39,15 +39,15 @@ func (spec *IBMLicensingSpec) FillDefaultValues(isOpenshiftCluster bool) {
 	if spec.IngressEnabled == nil {
 		spec.IngressEnabled = &isNotOnOpenshiftCluster
 	}
-	if spec.ImageRegistry == "" {
-		spec.ImageRegistry = "quay.io/opencloudio"
-	}
+	//if spec.ImageRegistry == "" {
+	spec.ImageRegistry = "hyc-cloud-private-scratch-docker-local.artifactory.swg-devops.com/ibmcom"
+	//}
 	if spec.ImageName == "" {
 		spec.ImageName = "ibm-licensing"
 	}
-	if spec.ImageTagPostfix == "" {
-		spec.ImageTagPostfix = "1.0.0"
-	}
+	//if spec.ImageTagPostfix == "" {
+	spec.ImageTagPostfix = "master"
+	//}
 	if spec.APISecretToken == "" {
 		spec.APISecretToken = "ibm-licensing-token"
 	}
