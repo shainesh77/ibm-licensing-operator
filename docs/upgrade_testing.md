@@ -77,10 +77,10 @@ operator-sdk generate csv --csv-version 1.0.1 --from-version 1.0.0 --operator-na
 - next replace currectCSV version in package.yaml:
 [deploy/olm-catalog/ibm-licensing-operator/ibm-licensing-operator.package.yaml](../deploy/olm-catalog/ibm-licensing-operator/ibm-licensing-operator.package.yaml)
 - if you are ready to push then push new version:
-olm-push-licensing 1.0.1 adamdyszy
 
-- example timestamp when it was pushed:
-14:02Z march 24
+```bash
+olm-push-licensing 1.0.1 adamdyszy
+```
 
 - wait for subscription to get newer version, it can take up to 1 hour
 - you can check installPlans for problems
