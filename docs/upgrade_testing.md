@@ -83,12 +83,12 @@ olm-push-licensing 1.0.1 adamdyszy
 14:02Z march 24
 
 - wait for subscription to get newer version, it can take up to 1 hour
-- done upgrade successful on OCP
-- install plan creation date for upgrade on OCP:
-creationTimestamp '2020-03-24T14:12:17Z'
-- done upgrade successful on non OCP
-- install plan creation date for upgrade on NON OCP:
-creationTimestamp: "2020-03-24T14:13:17Z"
+- you can check installPlans for problems
+
+if something goes wrong you need to:
+- check subscription, if something is wrong you need to delete it, as it will not fix automatically when `installPlan` failed, you can only delete it and add new when fixed
+- delete olm repo or skip given problematic version in newer versions
+- fix everything and add subscription again
 
 - example code changes can be seen in upgrade_scenario branch last few commits here:
 [https://github.com/IBM/ibm-licensing-operator/commits/upgrade_scenario](https://github.com/IBM/ibm-licensing-operator/commits/upgrade_scenario)
