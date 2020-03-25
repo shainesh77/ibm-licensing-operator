@@ -69,9 +69,10 @@ operator-sdk generate csv --csv-version 1.0.1 --from-version 1.0.0 --operator-na
 ```
 
 - if you compare new 1.0.1 csv yaml with 1.0.0 csv yaml you will see there are some things that were not copied:
-- look for customresourcedefinitions field and copy needed values
-- look for watch namespace it is probably overridden too if you have cluster scoped operator
+- look for `customresourcedefinitions` field and copy needed values
+- look for `WATCH_NAMESPACE` it is probably overridden too if you have cluster scoped operator
 - look for operator image you will probably need to add new one here to, it should have 2 occurrences
+- if for you `createdAt` field is not changed, you can set it to current date for clarity
 - if you want to modify upgrade scenario olm logic (what versions are upgraded to this version) do it now at replace section
 - next replace currectCSV version in package.yaml:
 [deploy/olm-catalog/ibm-licensing-operator/ibm-licensing-operator.package.yaml](../deploy/olm-catalog/ibm-licensing-operator/ibm-licensing-operator.package.yaml)
@@ -81,7 +82,7 @@ olm-push-licensing 1.0.1 adamdyszy
 - example timestamp when it was pushed:
 14:02Z march 24
 
-- wait for subscription to get newer version
+- wait for subscription to get newer version, it can take up to 1 hour
 - done upgrade successful on OCP
 - install plan creation date for upgrade on OCP:
 creationTimestamp '2020-03-24T14:12:17Z'
